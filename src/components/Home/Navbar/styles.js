@@ -28,5 +28,4 @@ export const LogoContainer = styled.div`
 export const SelectLanguageContainer = styled.div`
     display: flex;
     align-items: center;
-    width: 20%;
 `

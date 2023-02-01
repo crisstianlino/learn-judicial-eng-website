@@ -1,14 +1,11 @@
-import { useState } from 'react'
 import * as styles from './styles'
 import ResponsiveContainer from '@/components/Containers/ResponsiveContainer'
 import ContentContainer from '@/components/Containers/ContentContainer'
 import Image from 'next/image'
 import Logo from 'public/images/logo.svg'
-import ReactFlagsSelect from 'react-flags-select'
+import LanguageSwitcher from '../LanguageSwitcher'
 
 const Navbar = () => {
-    const [selected, setSelected] = useState('GB')
-
     return (
         <ResponsiveContainer>
             <ContentContainer>
@@ -25,19 +22,7 @@ const Navbar = () => {
                     </styles.TabContainer>
 
                     <styles.SelectLanguageContainer>
-                        <ReactFlagsSelect
-                            selected={selected}
-                            onSelect={code => setSelected(code)}
-                            customLabels={{
-                                GB: {
-                                    primary: 'English'
-                                },
-                                FR: {
-                                    primary: 'Français'
-                                }
-                            }}
-                            countries={['GB', 'FR']}
-                        />
+                        <LanguageSwitcher />
                     </styles.SelectLanguageContainer>
                 </styles.NavbarContainer>
             </ContentContainer>
