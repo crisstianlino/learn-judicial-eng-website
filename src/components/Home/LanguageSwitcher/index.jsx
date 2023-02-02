@@ -1,11 +1,12 @@
-import { useState } from 'react'
 import ReactFlagsSelect from 'react-flags-select'
 import { useRouter } from 'next/router'
 import { useCallback, useState } from 'react'
 import flagCodeToLocale from '@/utils/lang/flagCodeToLocale'
+import localeToFlagCode from '@/utils/lang/localeToFlagCode'
 
 const LanguageSwitcher = () => {
-    const [value, setValue] = useState('GB')
+    const { locale } = useRouter()
+    const [value, setValue] = useState(localeToFlagCode(locale))
     const router = useRouter()
 
     const switchToLocale = useCallback(
@@ -22,10 +23,6 @@ const LanguageSwitcher = () => {
             setValue(option)
 
             const locale = flagCodeToLocale(option)
-
-            // if (onChange) {
-            //     onChange(locale)
-            // }
 
             await switchToLocale(locale)
         },
