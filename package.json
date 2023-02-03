@@ -17,6 +17,7 @@
     "react-dom": "18.2.0",
     "react-flags-select": "^2.2.3",
     "react-i18next": "^12.1.4",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "styled-icons": "^10.47.0"
   }
 }

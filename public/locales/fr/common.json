@@ -1,3 +1,6 @@
 {
-    "test": "testu"
+    "navbar.about": "Sur",
+    "navbar.discover": "Découvrir",
+    "navbar.services": "Services",
+    "navbar.contact": "Contact"
 }

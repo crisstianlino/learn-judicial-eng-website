@@ -5,30 +5,61 @@ import Image from 'next/image'
 import Logo from 'public/images/logo.svg'
 import LanguageSwitcher from '@/components/Home/LanguageSwitcher'
 import { useTranslation } from 'next-i18next'
+import { Bars } from '@styled-icons/fa-solid/Bars'
+import { useState } from 'react'
+import Sidebar from '@/components/Home/Sidebar'
 
-const Navbar = () => {
+const Navbar = props => {
+    const { isDesktop, isMobile } = props
+    const [isOpen, setIsOpen] = useState(false)
     const { t } = useTranslation()
+
+    const toggle = () => {
+        setIsOpen(!isOpen)
+    }
 
     return (
         <ResponsiveContainer>
-            <ContentContainer>
-                <styles.NavbarContainer>
-                    <styles.LogoContainer>
-                        <Image src={Logo} width={100} height={100} />
-                    </styles.LogoContainer>
+            <ContentContainer isMobile={isMobile}>
+                <styles.NavbarContainer isMobile={isMobile}>
+                    {isDesktop ? (
+                        <>
+                            <styles.LogoContainer>
+                                <Image src={Logo} width={100} height={100} />
+                            </styles.LogoContainer>
 
-                    <styles.TabContainer>
-                        <styles.TabItem>{t('test')}</styles.TabItem>
-                        <styles.TabItem>Content2</styles.TabItem>
-                        <styles.TabItem>Content3</styles.TabItem>
-                        <styles.TabItem>Content4</styles.TabItem>
-                    </styles.TabContainer>
+                            <styles.TabContainer>
+                                <styles.TabItem>
+                                    {t('navbar.about')}
+                                </styles.TabItem>
+                                <styles.TabItem>
+                                    {t('navbar.discover')}
+                                </styles.TabItem>
+                                <styles.TabItem>
+                                    {t('navbar.services')}
+                                </styles.TabItem>
+                                <styles.TabItem>
+                                    {t('navbar.contact')}
+                                </styles.TabItem>
+                            </styles.TabContainer>
 
-                    <styles.SelectLanguageContainer>
-                        <LanguageSwitcher />
-                    </styles.SelectLanguageContainer>
+                            <styles.SelectLanguageContainer>
+                                <LanguageSwitcher />
+                            </styles.SelectLanguageContainer>
+                        </>
+                    ) : (
+                        <>
+                            <styles.LogoContainer>
+                                <Image src={Logo} width={70} height={70} />
+                            </styles.LogoContainer>
+                            <styles.SelectLanguageContainer>
+                                <Bars size={30} onClick={toggle} />
+                            </styles.SelectLanguageContainer>
+                        </>
+                    )}
                 </styles.NavbarContainer>
             </ContentContainer>
+            <Sidebar isOpen={isOpen} toggle={toggle} />
         </ResponsiveContainer>
     )
 }

@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const NavbarContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    background: #ffffff;
+    height: ${props => (props.isMobile ? '10vh' : '13vh')};
 `
 
 export const TabContainer = styled.ul`
@@ -22,6 +24,8 @@ export const TabItem = styled.li`
 `
 
 export const LogoContainer = styled.div`
+    display: flex;
+    align-items: center;
     cursor: pointer;
 `
 

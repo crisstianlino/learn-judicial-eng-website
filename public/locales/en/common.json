@@ -1,3 +1,6 @@
 {
-    "test": "test"
+    "navbar.about": "About",
+    "navbar.discover": "Discover",
+    "navbar.services": "Services",
+    "navbar.contact": "Contact"
 }
