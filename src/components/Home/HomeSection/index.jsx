@@ -4,6 +4,7 @@ import ContentContainer from '@/components/Containers/ContentContainer'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import Sky from 'public/images/skyWithBuildings.jpg'
+import { Heading } from '@/components/Typography'
 
 const HomeSection = props => {
     const { isDesktop, isMobile } = props
@@ -23,11 +24,23 @@ const HomeSection = props => {
                             justifyContent: 'center'
                         }}
                     >
-                        {/* <styles.Container> */}
-                        <styles.Title>TEXT HERE</styles.Title>
-                        <styles.Text>litte text here</styles.Text>
+                        <Heading
+                            level={1}
+                            size={'xxlarge'}
+                            color={'white'}
+                            fontWeight={700}
+                        >
+                            TEXT HERE
+                        </Heading>
+                        <Heading
+                            level={6}
+                            size={'small'}
+                            color={'white'}
+                            fontWeight={400}
+                        >
+                            TEXT HERE
+                        </Heading>
                         <styles.Button>click</styles.Button>
-                        {/* </styles.Container> */}
                     </ContentContainer>
                 </ResponsiveContainer>
             </styles.BackgroundImage>

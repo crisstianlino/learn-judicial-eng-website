@@ -13,12 +13,4 @@ export const Container = styled.div`
     justify-content: center;
 `
 
-export const Title = styled.h1`
-    color: #ffffff;
-`
-
-export const Text = styled.p`
-    color: #ffffff;
-`
-
 export const Button = styled.button``

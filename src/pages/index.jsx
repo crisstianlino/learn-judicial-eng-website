@@ -3,11 +3,12 @@ import HomeSection from '@/components/Home/HomeSection'
 import AboutSection from '@/components/Home/AboutSection'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import useWindowSize from '@/hooks/useWindowSize'
+import { breakpoint } from '@/constants/breakpoints'
 
 export default function Home() {
     const { width } = useWindowSize()
-    const isDesktop = width >= 1200
-    const isMobile = width < 1200
+    const isDesktop = width >= breakpoint
+    const isMobile = width < breakpoint
 
     return (
         <>
