@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import * as Scroll from 'react-scroll'
 
 export const NavbarContainer = styled.div`
     display: flex;
@@ -15,7 +16,7 @@ export const TabContainer = styled.ul`
     justify-content: space-between;
 `
 
-export const TabItem = styled.li`
+export const TabItem = styled(Scroll.Link)`
     cursor: pointer;
 
     &:hover {

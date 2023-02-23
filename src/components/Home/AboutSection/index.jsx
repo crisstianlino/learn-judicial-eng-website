@@ -11,7 +11,7 @@ const AboutSection = props => {
 
     return (
         <>
-            <ResponsiveContainer>
+            <ResponsiveContainer id="about">
                 <ContentContainer isMobile={isMobile}>
                     <styles.Container>
                         <styles.TitleContainer>

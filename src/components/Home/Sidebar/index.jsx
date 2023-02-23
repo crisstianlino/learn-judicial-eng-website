@@ -13,23 +13,35 @@ const Sidebar = ({ isOpen, toggle }) => {
             </styles.Icon>
             <styles.SidebarWrapper>
                 <styles.SidebarMenu>
-                    <styles.SidebarLink to="about" onClick={toggle}>
+                    <styles.SidebarLink
+                        to="about"
+                        smooth={true}
+                        onClick={toggle}
+                    >
                         {t('navbar.about')}
                     </styles.SidebarLink>
-                    <styles.SidebarLink to="discover" onClick={toggle}>
+                    <styles.SidebarLink
+                        smooth={true}
+                        to="discover"
+                        onClick={toggle}
+                    >
                         {t('navbar.discover')}
                     </styles.SidebarLink>
-                    <styles.SidebarLink to="services" onClick={toggle}>
+                    <styles.SidebarLink
+                        smooth={true}
+                        to="services"
+                        onClick={toggle}
+                    >
                         {t('navbar.services')}
                     </styles.SidebarLink>
-                    <styles.SidebarLink to="contac" onClick={toggle}>
+                    <styles.SidebarLink
+                        smooth={true}
+                        to="contac"
+                        onClick={toggle}
+                    >
                         {t('navbar.contact')}
                     </styles.SidebarLink>
-                    {/* <styles.SidebarLink to="signup" onClick={toggle}>Sign Up</styles.SidebarLink> */}
                 </styles.SidebarMenu>
-                {/* <SideBtnWrap>
-          <SidebarRoute to="/signin">Sign In</SidebarRoute>
-        </SideBtnWrap> */}
             </styles.SidebarWrapper>
         </styles.SidebarContainer>
     )
